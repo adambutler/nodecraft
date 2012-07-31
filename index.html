@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Nodecraft - NodeJS + ThreeJS + Minecraft</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+		<script src="libs/jquery/jquery-1.7.2.min.js"></script>
+		
+		<script src="libs/modernizr/modernizr.js"></script>
+
+		<script src="libs/threejs/Detector.js"></script>
+
+		<!-- This script is returned by socket.io package and does not exist as a regular file in the filesystem -->
+		<script src="/socket.io/socket.io.js"></script>
+
+		<script src="libs/coffeescript/coffee-script.js"></script>
+
+		<script type="text/coffeescript" src="desktop.coffee"></script>
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<script type="text/javascript">
+
+			$(document).ready(function(){
+				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+
+					Modernizr.load({
+					  test: Modernizr.deviceorientation,
+					  yep : 'mobile.js'
+					});
+
+				}else{
+					
+					Modernizr.load({
+					  test: Modernizr.webgl,
+					  yep : ['libs/threejs/Three.js','libs/threejs/Stats.js','libs/threejs/ImprovedNoise.js','minecraft.js','desktop.js']
+					});
+					
+				}
+			});
+
+		</script>
+
+	</head>
+	<body>
+		<div id="container"></div>
+	</body>
+</html>
