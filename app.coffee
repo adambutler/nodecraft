@@ -2,6 +2,8 @@ express = require("express")
 http = require("http")
 app = express()
 
+connections = []
+
 app.configure ->
   app.use express.static(__dirname)
 
@@ -20,17 +22,34 @@ io.sockets.on "connection", (socket) ->
   socket.on "changeDown", socketChangeDown(socket)
   socket.on "changeUp", socketChangeUp(socket)
   socket.on "disconnect", socketDisconect(socket)
+  socket.on "mobileConnectWithCode", mobileConnectWithCode(socket)
 
+mobileConnectWithCode = (socket) ->
+  (data) ->
+    if connections[data]?
+      console.log('p2p successfull')
+      socket.set('peerID', data)
+      socket.emit("serverAcceptedConnection", 200)
+      connections[data].emit('mobileDevicePing', data)
+    else
+      console.log 'socket does not exist'
 
 socketConnect = (socket) ->
-  console.log "Server: New connection - " + socket.id
+  id = Math.floor(Math.random()*90000) + 10000;
+  connections[id] = socket
+  socket.set 'connectionID', id
+  socket.emit 'connectionID', id
+
+  console.log "Server: New connection - " + socket.id + " - " + id
 
 socketOrientationUpdate = (socket) ->
-  console.log('Got Orientation')
   (data) ->
-    # console.log "x = #{data.x} y = #{data.y} z = #{data.z}"
-    socket.broadcast.emit "receiveOrientation", data
-
+    socket.get 'peerID', (err, peerID) ->
+      if connections[peerID]
+        connections[peerID].emit "receiveOrientation", data
+      else
+        console.log 'someone broke the connection'
+        
 socketChangeDown = (socket) ->
   (data) ->
     console.log 'down'
@@ -44,6 +63,8 @@ socketChangeUp = (socket) ->
 socketDisconect = (socket) ->
   ->
     console.log "Server: End Connection - " + socket.id
+    socket.get 'connectionID', (err,data) ->
+      connections[data] = null
 
 
 server.listen 1337

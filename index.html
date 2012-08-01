@@ -16,28 +16,31 @@
 
 		<script src="libs/coffeescript/coffee-script.js"></script>
 
-		<script type="text/coffeescript" src="desktop.coffee"></script>
-
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 
 		<script type="text/javascript">
 
 			$(document).ready(function(){
-				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-
+				if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+					$('html').addClass('mobile');
 					Modernizr.load({
 					  test: Modernizr.deviceorientation,
 					  yep : 'mobile.js'
 					});
 
 				}else{
-					
+					$('html').addClass('desktop');
+
 					Modernizr.load({
 					  test: Modernizr.webgl,
 					  yep : ['libs/threejs/Three.js','libs/threejs/Stats.js','libs/threejs/ImprovedNoise.js','minecraft.js','desktop.js']
 					});
 					
 				}
+
+				$('#closeCredits, #openCredits').click(function(){
+					$('#credits').toggle();
+				});
 			});
 
 		</script>
@@ -45,5 +48,63 @@
 	</head>
 	<body>
 		<div id="container"></div>
+
+		<div id="mobileInput">
+			<input type="text">
+			<span class="btn">Connect!</span>
+		</div>
+
+		<div id="creditsBar">
+			<h1 class="pull-left">NodeCraft</h1>
+			<h2 class="pull-left"><a href="#">http://github.com/adambutler/nodecraft/</a></h2>
+			<span id="openCredits" class="btn pull-right">Credits &amp; Info</span>
+		</div>
+
+		<div id="desktopConnect" class="modal hide">
+			<div class="content">
+				<h1>Awesome! Lets get started</h1>
+				<h2>Go to...<br/><small>http://184.173.168.215</small><br/>on your iOS or Android device and type in this code...<br/><small id="connectionID">wait...</small></i></h2>
+				<hr>
+				<h2>Status:<br/><small class="status">Waiting for connection</small></h2>
+			</div>
+		</div>
+
+		<div id="credits" class="modal hide">
+			<div class="content">
+				<p><b>NodeCraft</b> is a project by <a href="http://www.twitter.com/adambu1988">Adam Butler</a> as a tech demo for Mobile, WebGL, Node and WebSockets.</p>
+				<h2>Built with...</h2>
+				<ul>
+					<li><a href="http://nodejs.org/">Node.js</a></li>
+					<li><a href="https://github.com/mrdoob/three.js/">Three.js</a></li>
+					<li><a href="http://socket.io/">Socket.IO</a></li>
+					<li><a href="http://coffeescript.org/">CoffeeScript</a></li>
+				</ul>
+
+				<h2>Textures by...</h2>
+				<ul>
+					<li><a href="http://painterlypack.net/">Painterly Pack</a></li>
+				</ul>
+
+				<h2>3D Scene by...</h2>
+				<ul>
+					<li><a href="http://mrdoob.com/">mrdoob</a></li>
+				</ul>
+
+				<h2>Inspired by...</h2>
+				<ul>
+					<li><a href="http://minecraft.net/">Minecraft</a></li>
+				</ul>
+
+				<h2>Special thanks to...</h2>
+				<ul>
+					<li><a href="http://www.influxis.com/">Inflxis</a> for hosting on <a href="http://nodecloud.io/">NodeCloud.io</a></li>
+					<li><a href="http://www.twiter.com/hectijeff">Chris Mytton</a> for help on the project</a></li>
+					<li><a href="http://riothq.com/hacknight">Riot</a> for the beer!</a></li>
+					<li><a href="https://github.com/jbaicoianu/">bai</a> for being awesome!</li>
+				</ul>
+				<span id="closeCredits" class="btn">Close</span>
+			</div>
+		</div>
+
 	</body>
 </html>

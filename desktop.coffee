@@ -5,10 +5,19 @@ window.deviceButtonUp = false
 window.deviceButtonDown = false
 window.moveSpeed = 50
 
+$('#desktopConnect').show()
+
 socket = io.connect()
 
 socket.on "connect", ->
   console.log 'codeGenerationHere'
+
+socket.on "connectionID", (data) ->
+	$('#connectionID').html(data)
+
+socket.on "mobileDevicePing", (data) ->
+	$('#desktopConnect').hide()
+	window.mobileID = data
 
 socket.on "receiveOrientation", (data) ->
   window.deviceX = data.beta * (Math.PI / 180)

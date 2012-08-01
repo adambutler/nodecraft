@@ -1,0 +1,97 @@
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.btn {
+  cursor: pointer;
+  margin-right: 20px;
+  padding: 12px 20px;
+  background: #049cdb;
+  font-weight: bold;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.btn:hover {
+  background: #0378a9;
+}
+.hide {
+  display: none;
+}
+html body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  line-height: 18px;
+}
+html body h1 {
+  font-size: 18px;
+  line-height: 18px;
+}
+html body h2 {
+  font-size: 14px;
+  line-height: 18px;
+}
+html body a {
+  color: #049cdb;
+}
+html.desktop body .modal {
+  position: absolute;
+  width: 400px;
+  top: 100px;
+  left: 50%;
+  margin-left: -200px;
+  background: rgba(0, 0, 0, 0.85);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+html.desktop body .modal .content {
+  margin: 20px;
+  color: #fff;
+}
+html.desktop #desktopConnect .content {
+  text-align: center;
+}
+html.desktop #desktopConnect .content h2 {
+  line-height: 40px;
+}
+html.desktop #desktopConnect .content h2 small {
+  background: #fff;
+  color: #333;
+  padding: 10px 20px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+html.desktop #desktopConnect .content h2 small.status {
+  text-decoration: blink;
+  color: #888;
+}
+html.desktop #credits .content .btn {
+  margin-top: 10px;
+  display: inline-block;
+}
+html.desktop #creditsBar {
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 2%;
+  width: 96%;
+  background: #000;
+  background: rgba(0, 0, 0, 0.85);
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+  text-shadow: 1px 1px 0 #000;
+  padding: 10px 0;
+}
+html.desktop #creditsBar h1 {
+  margin-right: 20px;
+  margin-left: 20px;
+}
