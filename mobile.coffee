@@ -1,5 +1,3 @@
-alert 'detected as mobile'
-
 $('#mobileInput .btn').click ->
 	socket.emit('mobileConnectWithCode', $('#mobileInput input').val())
 

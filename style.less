@@ -84,6 +84,7 @@ html {
 							padding: 10px 20px;
 							.border-radius(4px);
 							border: 1px solid #ccc;
+							font-size:22px;
 
 							&.status {
 								text-decoration: blink;
@@ -119,6 +120,45 @@ html {
 					margin-right: 20px;
 					margin-left: 20px;
 				}
+			}
+
+			#mobileInput {
+				display:none;
+			}
+		}
+
+		&.mobile {
+			#mobileInput {
+				display: block;
+				color: #fff;
+				position: absolute;
+				top:0;
+				left:5%;
+				width:90%;
+				background: #000;
+				background: rgba(0,0,0,0.85);
+				.border-radius(0 0 5px 5px);
+				text-align: center;
+				text-shadow: 1px 1px 0 #000;
+				padding: 10px 0;
+				p {
+					margin: 20px;
+				}
+
+				input, .btn {
+					height:40px;
+					margin: 0 20px;
+					width:235px;
+					margin-bottom: 20px;
+					display: block;
+					text-align: center;
+				}
+
+				.btn {
+					width: 206px;
+					height:25px;
+				}
+
 			}
 		}
 	}

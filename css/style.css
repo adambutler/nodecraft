@@ -67,6 +67,7 @@ html.desktop #desktopConnect .content h2 small {
   -moz-border-radius: 4px;
   border-radius: 4px;
   border: 1px solid #ccc;
+  font-size: 22px;
 }
 html.desktop #desktopConnect .content h2 small.status {
   text-decoration: blink;
@@ -94,4 +95,39 @@ html.desktop #creditsBar {
 html.desktop #creditsBar h1 {
   margin-right: 20px;
   margin-left: 20px;
+}
+html.desktop #mobileInput {
+  display: none;
+}
+html.mobile #mobileInput {
+  display: block;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 5%;
+  width: 90%;
+  background: #000;
+  background: rgba(0, 0, 0, 0.85);
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  text-align: center;
+  text-shadow: 1px 1px 0 #000;
+  padding: 10px 0;
+}
+html.mobile #mobileInput p {
+  margin: 20px;
+}
+html.mobile #mobileInput input,
+html.mobile #mobileInput .btn {
+  height: 40px;
+  margin: 0 20px;
+  width: 235px;
+  margin-bottom: 20px;
+  display: block;
+  text-align: center;
+}
+html.mobile #mobileInput .btn {
+  width: 206px;
+  height: 25px;
 }
