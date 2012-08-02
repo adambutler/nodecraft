@@ -46,3 +46,5 @@ updateAnimation = ->
 	requestAnimationFrame?(updateAnimation)
 
 requestAnimationFrame?(updateAnimation)
+
+$('#loading').hide()

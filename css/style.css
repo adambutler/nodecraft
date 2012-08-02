@@ -21,6 +21,8 @@
   display: none;
 }
 html body {
+  background: url('/textures/cutcube@2x.png');
+  background-size: 20px 36px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 0;
   margin: 0;
@@ -52,6 +54,19 @@ html.desktop body .modal {
 html.desktop body .modal .content {
   margin: 20px;
   color: #fff;
+}
+html.desktop #loading {
+  top: 0;
+  text-align: center;
+  width: 110px;
+  margin-left: -100px;
+  padding: 10px 20px 0px 20px;
+  color: #fff;
+  left: 50%;
+  display: block;
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
 }
 html.desktop #desktopConnect .content {
   text-align: center;
@@ -99,6 +114,31 @@ html.desktop #creditsBar h1 {
 html.desktop #mobileInput {
   display: none;
 }
+html.mobile .modal {
+  position: absolute;
+  width: 100%;
+  max-height: 100%;
+  overflow: scroll;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+html.mobile .modal .content {
+  margin: 20px;
+  color: #fff;
+}
+html.mobile #credits .content {
+  position: relative;
+  padding-top: 60px;
+}
+html.mobile #credits .content .btn {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -35px;
+}
 html.mobile #mobileInput {
   display: block;
   color: #fff;
@@ -130,4 +170,26 @@ html.mobile #mobileInput .btn {
 html.mobile #mobileInput .btn {
   width: 206px;
   height: 25px;
+}
+html.mobile #creditsBar {
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 2%;
+  width: 96%;
+  background: #000;
+  background: rgba(0, 0, 0, 0.85);
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+  text-shadow: 1px 1px 0 #000;
+  padding: 10px 0;
+}
+html.mobile #creditsBar h1 {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+html.mobile #creditsBar h2 {
+  display: none;
 }
