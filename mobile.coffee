@@ -6,6 +6,10 @@ socket = io.connect()
 socket.on "connect", ->
 	# do nothing
 
+socket.on "error", (error) ->
+	alert error
+
+
 socket.on "serverAcceptedConnection", (data) ->
 	alert 'Connection Accepted'
 	window.ondeviceorientation = (e) ->

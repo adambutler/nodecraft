@@ -129,6 +129,9 @@ html.mobile .modal .content {
   margin: 20px;
   color: #fff;
 }
+html.mobile #gh-banner {
+  display: none;
+}
 html.mobile #credits .content {
   position: relative;
   padding-top: 60px;

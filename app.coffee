@@ -32,7 +32,7 @@ mobileConnectWithCode = (socket) ->
       socket.emit("serverAcceptedConnection", 200)
       connections[data].emit('mobileDevicePing', data)
     else
-      console.log 'socket does not exist'
+      socket.emit("error", "Sorry... I couldn't find that connection")
 
 socketConnect = (socket) ->
   id = Math.floor(Math.random()*90000) + 10000;
