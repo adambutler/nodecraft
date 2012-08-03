@@ -48,7 +48,11 @@ socketOrientationUpdate = (socket) ->
       if connections[peerID]
         connections[peerID].emit "receiveOrientation", data
       else
-        console.log 'someone broke the connection'
+        socket.get 'sentBrokeConnection', (err, sentBrokeConnection) ->
+          if sentBrokeConnection isnt true
+            console.log 'someone broke the connection'
+            socket.emit 'lostConnection', '444'
+            socket.set 'sentBrokeConnection', true
         
 socketChangeDown = (socket) ->
   (data) ->
