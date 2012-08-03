@@ -67,4 +67,4 @@ socketDisconect = (socket) ->
       connections[data] = null
 
 
-server.listen 1337
+server.listen process.env.PORT || 1337
