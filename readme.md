@@ -2,7 +2,7 @@
 
 ## About
 
-This is a tech demo using a handfull of awesome technologies combined. Visit http://184.173.168.215 to try this online.
+This is a tech demo using a handfull of awesome technologies combined. Visit <http://nodecraft.lab.io> to try this online.
 
 ## Running
 
