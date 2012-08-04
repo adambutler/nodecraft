@@ -22,7 +22,7 @@ Then open `http://127.0.0.1:1377`
 
 ## Credits
 
-NodeCraft is a project by [Adam Butler](http://www.twitter.com/adambutler) as a tech demo for Mobile, WebGL, Node and WebSockets.
+NodeCraft is a project by [Adam Butler](http://www.twitter.com/adambu1988) as a tech demo for Mobile, WebGL, Node and WebSockets.
 
 #### Built with...
 
