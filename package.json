@@ -1,0 +1,13 @@
+{
+  "name": "nodecraft",
+  "version": "0.0.1",
+  "description": "A tech demo controll a minecraft world using your mobile as a controller. Uses threejs and node with socket.io and express",
+  "main": "app.coffee",
+  "dependencies": {
+    "express": "~3.0.5",
+    "socket.io": "~0.9.13"
+  },
+  "author": "Adam Butler",
+  "license": "BSD",
+  "readmeFilename": "readme.md"
+}
