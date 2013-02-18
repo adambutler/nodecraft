@@ -7,7 +7,7 @@ window.moveSpeed = 50
 
 $('#desktopConnect').show()
 
-socket = io.connect()
+socket = io.connect('http://127.0.0.1/1337')
 
 socket.on "connect", ->
   console.log 'codeGenerationHere'

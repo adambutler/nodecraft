@@ -3,7 +3,7 @@ $(document).ready ->
     $('#mobileInput .btn').click ->
         socket.emit('mobileConnectWithCode', $('#mobileInput input').val())
 
-    socket = io.connect()
+    socket = io.connect('http://127.0.0.1/1337')
 
     socket.on "connect", ->
         # do nothing
