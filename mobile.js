@@ -5,7 +5,7 @@
     $('#mobileInput .btn').click(function() {
       return socket.emit('mobileConnectWithCode', $('#mobileInput input').val());
     });
-    socket = io.connect('http://127.0.0.1:1337');
+    socket = io.connect('http://nodecraft.lab.io:1337');
     socket.on("connect", function() {});
     socket.on("error", function(error) {
       return alert(error);

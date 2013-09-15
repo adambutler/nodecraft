@@ -16,7 +16,7 @@
 
   $('#desktopConnect').show();
 
-  socket = io.connect('http://127.0.0.1/1337');
+  socket = io.connect('http://nodecraft.lab.io:1337');
 
   socket.on("connect", function() {
     return console.log('codeGenerationHere');
