@@ -18,7 +18,7 @@ This is a tech demo using a handfull of awesome technologies combined. Visit <ht
 
 `$ coffee app.coffee`
 
-Then open `http://127.0.0.1:1377`
+Then open `http://127.0.0.1:1337`
 
 ## Credits
 
